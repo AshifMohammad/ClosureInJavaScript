@@ -49,3 +49,28 @@ arguments: (...)caller: (...)length: 1name: "add"__proto__: ƒ()[[FunctionLocati
 external: 3
 1: Global { type: "global", name: "", object: Window }
 ```
+
+``Pure JS with out any ES6 Standard ``
+## Executable code 
+```
+JavaScript
+
+var addTo = function(external){
+    var add= function(inner){
+        return external + inner
+    }
+    return add;
+}
+
+//console.log(addTo(3)) //this will be undefined cuz inner variable is still undefined
+
+//Closure is a property which stores the variable out the outer funciton and returns 
+
+console.dir(addTo(3));
+var addThree = new addTo(3.1);
+
+console.log(addThree(2.1))
+
+
+//var addThree = new addTo(3);
+```
